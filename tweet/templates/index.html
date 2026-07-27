@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+TweetHub
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+
+        <div class="col-md-8 text-center">
+
+            <h1 class="display-3 fw-bold mb-3">
+                Welcome to TweetHub
+            </h1>
+
+            <p class="lead text-secondary mb-4">
+                Share your thoughts, connect with people, and discover what's happening around the world.
+            </p>
+
+            <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-5 py-2">
+                Get Started
+            </a>
+
+            <div class="mt-5">
+                <img src="{% static 'images/tweethub image.png' %}"
+                    class="img-fluid rounded shadow"
+                    alt="TweetHub">
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
