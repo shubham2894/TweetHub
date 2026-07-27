@@ -187,9 +187,9 @@ This project helped me understand:
 
 ---
 
-## 📄 License
+## 📌 Note
 
-This project is intended for **learning and educational purposes only**.
+This project was built as a practice project to learn Django, authentication, CRUD operations, and file uploads.
 
 ---
 
