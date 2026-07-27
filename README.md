@@ -195,10 +195,8 @@ This project is intended for **learning and educational purposes only**.
 
 ## 👨‍💻 Author
 
-**Shubham**
+**Shubham Chavan**
 
 GitHub: **https://github.com/shubham2894**
 
----
 
-⭐ If you like this project, consider giving it a star!
