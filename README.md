@@ -182,7 +182,6 @@ This project helped me understand:
 - 🔍 Search Tweets
 - 🌙 Dark Mode
 - 🔔 Notifications
-- 📄 Pagination
 - 🌐 Django REST Framework API
 
 ---
