@@ -2,18 +2,23 @@ from . import views
 from django.urls import path
 
 urlpatterns = [
-    path('home/', views.index , name = 'index'),
-    path('', views.tweet_list , name = 'tweet_list'),
-    path('create/', views.tweet_create , name = 'tweet_create'),
-    path('<int:tweet_id>/edit/', views.tweet_edit , name = 'tweet_edit'),
-    path('<int:tweet_id>/delete/', views.tweet_delete , name = 'tweet_delete'),
+    path('home/', views.index, name='index'),
 
-    path('register/', views.register , name = 'register'),
+    path('', views.tweet_list, name='tweet_list'),
+
+    path('create/', views.tweet_create, name='tweet_create'),
+
+    path('<int:tweet_id>/edit/', views.tweet_edit, name='tweet_edit'),
+
+    path('<int:tweet_id>/delete/', views.tweet_delete, name='tweet_delete'),
+
+    path('register/', views.register, name='register'),
+
+    # Profile
+    path('profile/', views.profile, name='profile'),
+
+    path('profile/edit/', views.edit_profile, name='edit_profile'),
 ]
-
-
-
-
 
 
 

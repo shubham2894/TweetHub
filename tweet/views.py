@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Tweet
-from .form import TweetForm, UserRegistrationForm
+from .models import Tweet, Profile
+from .form import TweetForm, UserRegistrationForm, ProfileForm
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
@@ -65,3 +65,45 @@ def register(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'form':form})
+
+
+@login_required
+def profile(request):
+    profile = Profile.objects.get(user=request.user)
+    tweets = Tweet.objects.filter(user=request.user).order_by("-created_at")
+
+    return render(
+        request,
+        "profile.html",
+        {
+            "profile": profile,
+            "tweets": tweets,
+        },
+    )
+
+
+@login_required
+def edit_profile(request):
+    profile = Profile.objects.get(user=request.user)
+
+    if request.method == "POST":
+        form = ProfileForm(
+            request.POST,
+            request.FILES,
+            instance=profile
+        )
+
+        if form.is_valid():
+            form.save()
+            return redirect("profile")
+
+    else:
+        form = ProfileForm(instance=profile)
+
+    return render(
+        request,
+        "edit_profile.html",
+        {
+            "form": form
+        }
+    )

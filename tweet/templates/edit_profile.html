@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Edit Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+                    <h3>Edit Profile</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Profile Picture
+                            </label>
+
+                            {{ form.profile_picture }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Cover Image
+                            </label>
+
+                            {{ form.cover_image }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Bio
+                            </label>
+
+                            {{ form.bio }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Location
+                            </label>
+
+                            {{ form.location }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Website
+                            </label>
+
+                            {{ form.website }}
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+                            Save Changes
+                        </button>
+
+                        <a href="{% url 'profile' %}"
+                           class="btn btn-secondary">
+                            Cancel
+                        </a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

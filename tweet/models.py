@@ -14,3 +14,40 @@ class Tweet(models.Model):
     
     
 
+class Profile(models.Model):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE
+    )
+
+    profile_picture = models.ImageField(
+        upload_to="profile_pictures/",
+        default="profile_pictures/default.png"
+    )
+
+    cover_image = models.ImageField(
+        upload_to="cover_images/",
+        blank=True,
+        null=True
+    )
+
+    bio = models.TextField(
+        max_length=250,
+        blank=True
+    )
+
+    location = models.CharField(
+        max_length=100,
+        blank=True
+    )
+
+    website = models.URLField(
+        blank=True
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.user.username
