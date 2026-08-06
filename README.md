@@ -6,17 +6,11 @@
 
 ## 📖 About
 
-TweetHub is a simple Twitter-inspired web application built with **Django**.
+TweetHub is a Twitter-inspired social media web application built with **Django**.
 
-This project was developed to practice Django fundamentals such as:
+The project started as a CRUD application and is gradually evolving into a complete social networking platform. It focuses on learning Django by implementing real-world features such as authentication, user profiles, media uploads, and tweet management.
 
-- User Authentication
-- CRUD Operations
-- Template Rendering
-- Image Uploads
-- Static & Media File Handling
-
-> **Note:** This is a **practice project** created for learning purposes.
+> **Note:** This is a learning and portfolio project that is continuously being improved with new features.
 
 ---
 
@@ -30,13 +24,30 @@ This project was developed to practice Django fundamentals such as:
 
 ## ✨ Features
 
+### Authentication
 - 👤 User Registration
-- 🔐 User Login & Logout
+- 🔐 User Login
+- 🚪 User Logout
+
+### Tweets
 - 📝 Create Tweets
 - ✏️ Edit Your Own Tweets
 - 🗑️ Delete Your Own Tweets
 - 🖼️ Upload Images with Tweets
-- 📱 Responsive UI using Bootstrap
+
+### User Profiles
+- 👤 User Profile Page
+- 📷 Profile Picture Upload
+- 🖼️ Cover Image Upload
+- 📝 Edit Bio
+- 📍 Location
+- 🌐 Website
+- 📅 Joined Date
+- 📄 View Your Tweets on Profile
+
+### UI
+- 🏠 Landing Page
+- 📱 Responsive Bootstrap Design
 - 🔒 Users can edit/delete only their own tweets
 
 ---
@@ -49,6 +60,8 @@ This project was developed to practice Django fundamentals such as:
 - Bootstrap 5
 - HTML5
 - CSS3
+- Git
+- GitHub
 
 ---
 
@@ -64,6 +77,7 @@ TweetHub/
 ├── media/
 ├── screenshots/
 ├── manage.py
+├── db.sqlite3
 ├── requirements.txt
 └── README.md
 ```
@@ -71,8 +85,6 @@ TweetHub/
 ---
 
 ## ⚙️ Requirements
-
-Before running the project, install:
 
 - Python 3.10+
 - Git
@@ -88,7 +100,7 @@ Before running the project, install:
 git clone https://github.com/shubham2894/TweetHub.git
 ```
 
-### 2. Navigate to the project
+### 2. Navigate into the project
 
 ```bash
 cd TweetHub
@@ -102,13 +114,13 @@ cd TweetHub
 python -m venv env
 ```
 
-Activate it:
+Activate:
 
 ```bash
 env\Scripts\activate
 ```
 
-**macOS/Linux**
+**macOS / Linux**
 
 ```bash
 python3 -m venv env
@@ -127,19 +139,19 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-### 6. (Optional) Create an admin account
+### 6. Create an admin account (Optional)
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7. Run the development server
+### 7. Start the server
 
 ```bash
 python manage.py runserver
 ```
 
-Open your browser and visit:
+Open:
 
 ```
 http://127.0.0.1:8000/
@@ -155,40 +167,68 @@ http://127.0.0.1:8000/admin/
 
 ## 📚 Learning Outcomes
 
-This project helped me understand:
+Through this project I learned:
 
 - Django Project Structure
 - Django Apps
 - URL Routing
 - Function-Based Views
 - Django Models
-- Django Templates
-- Django Forms
-- Authentication System
+- Model Relationships
+- Model Forms
+- Authentication
 - CRUD Operations
-- Static Files
-- Media Files
+- User Profiles
+- Image Uploads
+- Static & Media Files
 - Bootstrap Integration
 - Git & GitHub
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Roadmap
+
+### ✅ Completed
+
+- Landing Page
+- User Authentication
+- Tweet CRUD
+- Image Upload
+- User Profile
+- Edit Profile
+- Profile Picture
+- Cover Image
+- Bio
+- Location
+- Website
+- Profile Timeline
+
+### 🔄 In Progress
+
+- Follow / Unfollow Users
+
+### 📌 Planned Features
 
 - ❤️ Like Tweets
 - 💬 Comments
-- 👥 Follow Users
-- 👤 User Profiles
+- 👥 Followers & Following
+- 🔍 Search Users
 - 🔍 Search Tweets
-- 🌙 Dark Mode
+- ⭐ Bookmarks
 - 🔔 Notifications
+- 🌙 Dark Mode
+- 📊 User Dashboard
+- 📱 Responsive Improvements
+- ⚡ Real-time Feed
+- 💬 Direct Messaging
+- 🤖 AI Features
 - 🌐 Django REST Framework API
 
 ---
 
-## 📌 Note
+## 📄 License
 
-This project was built as a practice project to learn Django, authentication, CRUD operations, and file uploads.
+This project is created for educational and portfolio purposes.
 
 ---
 
@@ -196,6 +236,6 @@ This project was built as a practice project to learn Django, authentication, CR
 
 **Shubham Chavan**
 
-GitHub: **https://github.com/shubham2894**
+GitHub: https://github.com/shubham2894
 
-
+---
