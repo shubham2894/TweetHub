@@ -1,10 +1,14 @@
 # 🐦 TweetHub
 
+<p align="center">
+  <img src="screenshots/banner.png" alt="TweetHub Banner" width="100%">
+</p>
+
 ## 📖 About
 
 TweetHub is a Twitter-inspired social media web application built with **Django**.
 
-The project started as a CRUD application and is gradually evolving into a complete social networking platform. It focuses on learning Django by implementing real-world features such as authentication, user profiles, social interactions, and media uploads.
+The project started as a CRUD application and is gradually evolving into a complete social networking platform. It focuses on learning Django by implementing real-world features such as authentication, user profiles, media uploads, social interactions, and tweet management.
 
 > **Note:** This is a learning and portfolio project that is continuously being improved with new features.
 
@@ -12,7 +16,9 @@ The project started as a CRUD application and is gradually evolving into a compl
 
 ## 📸 Project Preview
 
-(Add screenshots here)
+<p align="center">
+  <img src="screenshots/home.png" alt="TweetHub Home">
+</p>
 
 ---
 
@@ -24,60 +30,44 @@ The project started as a CRUD application and is gradually evolving into a compl
 - 🔑 User Login
 - 🚪 User Logout
 
----
-
 ### 📝 Tweets
 
-- Create Tweets
-- Edit Your Own Tweets
-- Delete Your Own Tweets
-- Upload Images with Tweets
-
----
+- 📝 Create Tweets
+- ✏️ Edit Your Own Tweets
+- 🗑️ Delete Your Own Tweets
+- 🖼️ Upload Images with Tweets
 
 ### 👤 User Profiles
 
-- Public Profile Page
-- Profile Picture Upload
-- Cover Image Upload
-- Bio
-- Location
-- Website
-- Joined Date
-- Personal Tweet Timeline
-- Edit Profile
-
----
+- 👤 User Profile Page
+- 📷 Profile Picture Upload
+- 🖼️ Cover Image Upload
+- 📝 Edit Bio
+- 📍 Location
+- 🌐 Website
+- 📅 Joined Date
+- 📄 View Your Tweets on Profile
 
 ### 👥 Social Features
 
-- Follow Users
-- Unfollow Users
-- Followers Count
-- Following Count
-
----
-
-### ❤️ Likes
-
-- Like Tweets
-- Unlike Tweets
-- Like Counter
-- One Like Per User Per Tweet
-
----
+- 👥 Follow Users
+- 🚫 Unfollow Users
+- 👥 Followers Count
+- 👥 Following Count
+- ❤️ Like Tweets
+- 🤍 Unlike Tweets
+- ❤️ Like Counter
 
 ### 🎨 UI
 
-- Landing Page
-- Responsive Bootstrap Design
-- Dark Theme
-- Profile Navigation
-- Responsive Tweet Cards
+- 🏠 Landing Page
+- 📱 Responsive Bootstrap Design
+- 🌙 Dark Theme
+- 🔒 Users can edit/delete only their own tweets
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
 - Python
 - Django
@@ -109,7 +99,7 @@ TweetHub/
 
 ---
 
-## ⚙ Requirements
+## ⚙️ Requirements
 
 - Python 3.10+
 - Git
@@ -119,70 +109,70 @@ TweetHub/
 
 ## 🚀 Installation
 
-### Clone Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/shubham2894/TweetHub.git
 ```
 
-### Enter Project
+### 2. Navigate into the project
 
 ```bash
 cd TweetHub
 ```
 
-### Create Virtual Environment
+### 3. Create a virtual environment
 
-Windows
+**Windows**
 
 ```bash
 python -m venv env
 ```
 
-Activate
+Activate:
 
 ```bash
 env\Scripts\activate
 ```
 
-macOS/Linux
+**macOS / Linux**
 
 ```bash
 python3 -m venv env
 source env/bin/activate
 ```
 
-### Install Packages
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Apply Migrations
+### 5. Apply migrations
 
 ```bash
 python manage.py migrate
 ```
 
-### Create Admin User
+### 6. Create an admin account (Optional)
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### Run Server
+### 7. Start the server
 
 ```bash
 python manage.py runserver
 ```
 
-Open
+Open:
 
 ```
 http://127.0.0.1:8000/
 ```
 
-Admin
+Admin Panel:
 
 ```
 http://127.0.0.1:8000/admin/
@@ -190,27 +180,30 @@ http://127.0.0.1:8000/admin/
 
 ---
 
-## 📚 What I Learned
+## 📚 Learning Outcomes
+
+Through this project I learned:
 
 - Django Project Structure
 - Django Apps
-- Models
-- Model Relationships
-- Forms
-- Function-Based Views
 - URL Routing
+- Function-Based Views
+- Django Models
+- Model Relationships
+- Model Forms
 - Authentication
 - CRUD Operations
-- File Uploads
 - User Profiles
 - Follow System
 - Like System
+- Image Uploads
+- Static & Media Files
 - Bootstrap Integration
 - Git & GitHub
 
 ---
 
-## 🚀 Development Roadmap
+## 🚀 Roadmap
 
 ### ✅ Completed
 
@@ -218,7 +211,7 @@ http://127.0.0.1:8000/admin/
 - User Authentication
 - Tweet CRUD
 - Image Upload
-- User Profiles
+- User Profile
 - Edit Profile
 - Profile Picture
 - Cover Image
@@ -231,33 +224,29 @@ http://127.0.0.1:8000/admin/
 - Like / Unlike Tweets
 - Like Counter
 
----
-
 ### 🚧 Currently Building
 
 - 💬 Comments System
 
----
+### 📌 Planned Features
 
-### 📌 Upcoming Features
-
-- Search Users
-- Search Tweets
-- Bookmarks
-- Notifications
-- Dark Mode Improvements
-- User Dashboard
-- Responsive UI Improvements
-- Real-time Feed
-- Direct Messaging
-- AI Features
-- Django REST Framework API
+- 🔍 Search Users
+- 🔍 Search Tweets
+- ⭐ Bookmarks
+- 🔔 Notifications
+- 🌙 Dark Mode Improvements
+- 📊 User Dashboard
+- 📱 Responsive Improvements
+- ⚡ Real-time Feed
+- 💬 Direct Messaging
+- 🤖 AI Features
+- 🌐 Django REST Framework API
 
 ---
 
 ## 📄 License
 
-This project is developed for educational and portfolio purposes.
+This project is created for educational and portfolio purposes.
 
 ---
 
@@ -266,3 +255,5 @@ This project is developed for educational and portfolio purposes.
 **Shubham Chavan**
 
 GitHub: **https://github.com/shubham2894**
+
+---
