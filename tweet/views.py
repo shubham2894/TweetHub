@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Tweet, Profile, Follow
+from .models import Tweet, Profile, Follow, Like
 from .form import TweetForm, UserRegistrationForm, ProfileForm
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect
@@ -12,8 +12,35 @@ def index(request):
 
 
 def tweet_list(request):
-    tweets = Tweet.objects.all().order_by('-created_at')
-    return render(request, 'tweet_list.html', {'tweets': tweets})
+    tweets = Tweet.objects.all().order_by("-created_at")
+
+    tweet_data = []
+
+    for tweet in tweets:
+
+        liked = False
+
+        if request.user.is_authenticated:
+            liked = Like.objects.filter(
+                user=request.user,
+                tweet=tweet
+            ).exists()
+
+        tweet_data.append(
+            {
+                "tweet": tweet,
+                "liked": liked,
+                "likes": tweet.likes.count(),
+            }
+        )
+
+    return render(
+        request,
+        "tweet_list.html",
+        {
+            "tweet_data": tweet_data,
+        },
+    )
 
 @login_required
 def tweet_create(request):
@@ -84,6 +111,26 @@ def user_profile(request, username):
         user=user
     ).order_by("-created_at")
 
+    tweet_data = []
+
+    for tweet in tweets:
+
+        liked = False
+
+        if request.user.is_authenticated:
+            liked = Like.objects.filter(
+                user=request.user,
+                tweet=tweet
+            ).exists()
+
+        tweet_data.append(
+            {
+                "tweet": tweet,
+                "liked": liked,
+                "likes": tweet.likes.count(),
+            }
+        )
+
     is_following = Follow.objects.filter(
         follower=request.user,
         following=user
@@ -102,7 +149,7 @@ def user_profile(request, username):
         "profile.html",
         {
             "profile": profile,
-            "tweets": tweets,
+            "tweet_data": tweet_data,
             "is_following": is_following,
             "followers": followers,
             "following": following,
@@ -157,3 +204,25 @@ def unfollow_user(request, username):
     ).delete()
 
     return redirect("user_profile", username=username)
+
+@login_required
+def like_tweet(request, tweet_id):
+    tweet = get_object_or_404(Tweet, id=tweet_id)
+
+    Like.objects.get_or_create(
+        user=request.user,
+        tweet=tweet
+    )
+
+    return redirect("tweet_list")
+
+@login_required
+def unlike_tweet(request, tweet_id):
+    tweet = get_object_or_404(Tweet, id=tweet_id)
+
+    Like.objects.filter(
+        user=request.user,
+        tweet=tweet
+    ).delete()
+
+    return redirect("tweet_list")

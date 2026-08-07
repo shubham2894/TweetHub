@@ -1,35 +1,98 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Tweethub
-{% endblock title %}
+TweetHub
+{% endblock %}
 
 {% block content %}
-<h1 class="text-center mt-4">Welcome to TweetHub</h1>
 
-<a class="btn btn-primary mb-4" href="{% url "tweet_create" %}">Create a tweet</a>
-<div class="container row gap-3">
-    {% for tweet in tweets %}
-    <div class="card" style="width: 18rem;">
+<a class="btn btn-primary mb-4" href="{% url 'tweet_create' %}">
+    Create a Tweet
+</a>
 
-        {% if tweet.photo %}
-        <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet Image">
-        {% endif %}
+{% for item in tweet_data %}
 
-        <div class="card-body">
-            <h5 class="card-title">{{tweet.user.username}}</h5>
-            <p class="card-text">{{tweet.text}}</p>
+<div class="card mb-4">
+    
+    {% if item.tweet.photo %}
+    <div class="tweet-image-container">
+        <img src="{{ item.tweet.photo.url }}"
+            class="tweet-image"
+            alt="Tweet Image">
+    </div>
+    {% endif %}
 
-            {% if tweet.user == user %}
-            <a href="{% url "tweet_edit" tweet.id %}" class="btn btn-primary">Edit</a>
-            <a href="{% url "tweet_delete" tweet.id%}" class="btn btn-danger">Delete</a>
+    <div class="card-body">
+
+        <h5>
+            <a href="{% url 'user_profile' item.tweet.user.username %}"
+               class="text-decoration-none text-white">
+                {{ item.tweet.user.username }}
+            </a>
+        </h5>
+
+        <p class="card-text">
+            {{ item.tweet.text }}
+        </p>
+
+        <small class="text-muted">
+            {{ item.tweet.created_at }}
+        </small>
+
+        <hr>
+
+        <strong>
+            ❤️ {{ item.likes }} Likes
+        </strong>
+
+        <br><br>
+
+        {% if user.is_authenticated %}
+
+            {% if item.liked %}
+
+                <a href="{% url 'unlike_tweet' item.tweet.id %}"
+                   class="btn btn-danger btn-sm">
+                    ❤️ Unlike
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'like_tweet' item.tweet.id %}"
+                   class="btn btn-outline-danger btn-sm">
+                    🤍 Like
+                </a>
+
             {% endif %}
 
-        </div>
-        
+        {% endif %}
+
+        {% if item.tweet.user == user %}
+
+            <hr>
+
+            <a href="{% url 'tweet_edit' item.tweet.id %}"
+               class="btn btn-primary">
+                Edit
+            </a>
+
+            <a href="{% url 'tweet_delete' item.tweet.id %}"
+               class="btn btn-danger">
+                Delete
+            </a>
+
+        {% endif %}
+
     </div>
-    {% endfor %}
+
 </div>
 
-{% endblock  %}
+{% empty %}
 
+<div class="alert alert-info">
+    No tweets available.
+</div>
+
+{% endfor %}
+
+{% endblock %}
