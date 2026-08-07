@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import Tweet, Profile
+from .models import Tweet, Profile, Follow
 from .form import TweetForm, UserRegistrationForm, ProfileForm
+from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
@@ -66,11 +67,35 @@ def register(request):
         form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'form':form})
 
-
 @login_required
 def profile(request):
-    profile = Profile.objects.get(user=request.user)
-    tweets = Tweet.objects.filter(user=request.user).order_by("-created_at")
+    return redirect(
+        "user_profile",
+        username=request.user.username
+    )
+
+@login_required
+def user_profile(request, username):
+    user = get_object_or_404(User, username=username)
+
+    profile = Profile.objects.get(user=user)
+
+    tweets = Tweet.objects.filter(
+        user=user
+    ).order_by("-created_at")
+
+    is_following = Follow.objects.filter(
+        follower=request.user,
+        following=user
+    ).exists()
+
+    followers = Follow.objects.filter(
+        following=user
+    ).count()
+
+    following = Follow.objects.filter(
+        follower=user
+    ).count()
 
     return render(
         request,
@@ -78,9 +103,11 @@ def profile(request):
         {
             "profile": profile,
             "tweets": tweets,
+            "is_following": is_following,
+            "followers": followers,
+            "following": following,
         },
     )
-
 
 @login_required
 def edit_profile(request):
@@ -107,3 +134,26 @@ def edit_profile(request):
             "form": form
         }
     )
+
+@login_required
+def follow_user(request, username):
+    user_to_follow = get_object_or_404(User, username=username)
+
+    if request.user != user_to_follow:
+        Follow.objects.get_or_create(
+            follower=request.user,
+            following=user_to_follow
+        )
+
+    return redirect("user_profile", username=username)
+
+@login_required
+def unfollow_user(request, username):
+    user_to_unfollow = get_object_or_404(User, username=username)
+
+    Follow.objects.filter(
+        follower=request.user,
+        following=user_to_unfollow
+    ).delete()
+
+    return redirect("user_profile", username=username)
