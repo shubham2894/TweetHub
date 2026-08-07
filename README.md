@@ -1,14 +1,10 @@
 # 🐦 TweetHub
 
-<p align="center">
-  <img src="screenshots/banner.png" alt="TweetHub Banner" width="100%">
-</p>
-
 ## 📖 About
 
 TweetHub is a Twitter-inspired social media web application built with **Django**.
 
-The project started as a CRUD application and is gradually evolving into a complete social networking platform. It focuses on learning Django by implementing real-world features such as authentication, user profiles, media uploads, and tweet management.
+The project started as a CRUD application and is gradually evolving into a complete social networking platform. It focuses on learning Django by implementing real-world features such as authentication, user profiles, social interactions, and media uploads.
 
 > **Note:** This is a learning and portfolio project that is continuously being improved with new features.
 
@@ -16,43 +12,72 @@ The project started as a CRUD application and is gradually evolving into a compl
 
 ## 📸 Project Preview
 
-<p align="center">
-  <img src="screenshots/home.png" alt="TweetHub Home">
-</p>
+(Add screenshots here)
 
 ---
 
 ## ✨ Features
 
-### Authentication
+### 🔐 Authentication
+
 - 👤 User Registration
-- 🔐 User Login
+- 🔑 User Login
 - 🚪 User Logout
-
-### Tweets
-- 📝 Create Tweets
-- ✏️ Edit Your Own Tweets
-- 🗑️ Delete Your Own Tweets
-- 🖼️ Upload Images with Tweets
-
-### User Profiles
-- 👤 User Profile Page
-- 📷 Profile Picture Upload
-- 🖼️ Cover Image Upload
-- 📝 Edit Bio
-- 📍 Location
-- 🌐 Website
-- 📅 Joined Date
-- 📄 View Your Tweets on Profile
-
-### UI
-- 🏠 Landing Page
-- 📱 Responsive Bootstrap Design
-- 🔒 Users can edit/delete only their own tweets
 
 ---
 
-## 🛠️ Tech Stack
+### 📝 Tweets
+
+- Create Tweets
+- Edit Your Own Tweets
+- Delete Your Own Tweets
+- Upload Images with Tweets
+
+---
+
+### 👤 User Profiles
+
+- Public Profile Page
+- Profile Picture Upload
+- Cover Image Upload
+- Bio
+- Location
+- Website
+- Joined Date
+- Personal Tweet Timeline
+- Edit Profile
+
+---
+
+### 👥 Social Features
+
+- Follow Users
+- Unfollow Users
+- Followers Count
+- Following Count
+
+---
+
+### ❤️ Likes
+
+- Like Tweets
+- Unlike Tweets
+- Like Counter
+- One Like Per User Per Tweet
+
+---
+
+### 🎨 UI
+
+- Landing Page
+- Responsive Bootstrap Design
+- Dark Theme
+- Profile Navigation
+- Responsive Tweet Cards
+
+---
+
+## 🛠 Tech Stack
 
 - Python
 - Django
@@ -84,7 +109,7 @@ TweetHub/
 
 ---
 
-## ⚙️ Requirements
+## ⚙ Requirements
 
 - Python 3.10+
 - Git
@@ -94,70 +119,70 @@ TweetHub/
 
 ## 🚀 Installation
 
-### 1. Clone the repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/shubham2894/TweetHub.git
 ```
 
-### 2. Navigate into the project
+### Enter Project
 
 ```bash
 cd TweetHub
 ```
 
-### 3. Create a virtual environment
+### Create Virtual Environment
 
-**Windows**
+Windows
 
 ```bash
 python -m venv env
 ```
 
-Activate:
+Activate
 
 ```bash
 env\Scripts\activate
 ```
 
-**macOS / Linux**
+macOS/Linux
 
 ```bash
 python3 -m venv env
 source env/bin/activate
 ```
 
-### 4. Install dependencies
+### Install Packages
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Apply migrations
+### Apply Migrations
 
 ```bash
 python manage.py migrate
 ```
 
-### 6. Create an admin account (Optional)
+### Create Admin User
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7. Start the server
+### Run Server
 
 ```bash
 python manage.py runserver
 ```
 
-Open:
+Open
 
 ```
 http://127.0.0.1:8000/
 ```
 
-Admin Panel:
+Admin
 
 ```
 http://127.0.0.1:8000/admin/
@@ -165,28 +190,27 @@ http://127.0.0.1:8000/admin/
 
 ---
 
-## 📚 Learning Outcomes
-
-Through this project I learned:
+## 📚 What I Learned
 
 - Django Project Structure
 - Django Apps
-- URL Routing
-- Function-Based Views
-- Django Models
+- Models
 - Model Relationships
-- Model Forms
+- Forms
+- Function-Based Views
+- URL Routing
 - Authentication
 - CRUD Operations
+- File Uploads
 - User Profiles
-- Image Uploads
-- Static & Media Files
+- Follow System
+- Like System
 - Bootstrap Integration
 - Git & GitHub
 
 ---
 
-## 🚀 Roadmap
+## 🚀 Development Roadmap
 
 ### ✅ Completed
 
@@ -194,7 +218,7 @@ Through this project I learned:
 - User Authentication
 - Tweet CRUD
 - Image Upload
-- User Profile
+- User Profiles
 - Edit Profile
 - Profile Picture
 - Cover Image
@@ -202,33 +226,38 @@ Through this project I learned:
 - Location
 - Website
 - Profile Timeline
-
-### 🔄 In Progress
-
 - Follow / Unfollow Users
+- Followers & Following Count
+- Like / Unlike Tweets
+- Like Counter
 
-### 📌 Planned Features
+---
 
-- ❤️ Like Tweets
-- 💬 Comments
-- 👥 Followers & Following
-- 🔍 Search Users
-- 🔍 Search Tweets
-- ⭐ Bookmarks
-- 🔔 Notifications
-- 🌙 Dark Mode
-- 📊 User Dashboard
-- 📱 Responsive Improvements
-- ⚡ Real-time Feed
-- 💬 Direct Messaging
-- 🤖 AI Features
-- 🌐 Django REST Framework API
+### 🚧 Currently Building
+
+- 💬 Comments System
+
+---
+
+### 📌 Upcoming Features
+
+- Search Users
+- Search Tweets
+- Bookmarks
+- Notifications
+- Dark Mode Improvements
+- User Dashboard
+- Responsive UI Improvements
+- Real-time Feed
+- Direct Messaging
+- AI Features
+- Django REST Framework API
 
 ---
 
 ## 📄 License
 
-This project is created for educational and portfolio purposes.
+This project is developed for educational and portfolio purposes.
 
 ---
 
@@ -236,6 +265,4 @@ This project is created for educational and portfolio purposes.
 
 **Shubham Chavan**
 
-GitHub: https://github.com/shubham2894
-
----
+GitHub: **https://github.com/shubham2894**
